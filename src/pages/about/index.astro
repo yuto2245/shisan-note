@@ -1,0 +1,19 @@
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Callout from '../../components/Callout.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="このブログについて" description="資産ノートの目的、編集方針、運営者についてご案内します。">
+	<div class="container"><Breadcrumbs items={[{ label: 'このブログについて' }]} /></div>
+	<header class="page-hero"><div class="container"><p class="eyebrow">About</p><h1>このブログについて</h1><p>暮らしを置き去りにせず、長く続けられる資産形成を学ぶ場所です。</p></div></header>
+	<div class="reading-container legal prose">
+		<h2>資産ノートの目的</h2>
+		<p>資産ノートは、家計管理、新NISA、投資信託などについて調べたことを、あとから読み返せる形で整理する個人ブログです。短期間で資産を増やす方法ではなく、生活の安心を守りながら長期で考えるための基礎を扱います。</p>
+		<h2>編集方針</h2>
+		<ul><li>一次情報や公的機関の資料をできる限り確認する</li><li>事実と個人の考えを区別する</li><li>特定の金融商品を一方的に勧めない</li><li>誤りを見つけた場合は内容を見直す</li></ul>
+		<h2>運営者</h2>
+		<p>お金とWeb制作を学んでいる個人が運営しています。この初期版の記事は、サイトのレイアウトと運用方法を確認するためのサンプルを含みます。</p>
+		<Callout title="ご確認ください"><p>当サイトは投資助言を行うものではありません。制度や商品の最新情報は、金融庁や各金融機関などの公式情報をご確認ください。</p></Callout>
+	</div>
+</BaseLayout>

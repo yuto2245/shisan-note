@@ -1,0 +1,17 @@
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="免責事項" description="資産ノートの免責事項と投資情報の取り扱いについてご案内します。">
+	<div class="container"><Breadcrumbs items={[{ label: '免責事項' }]} /></div>
+	<header class="page-hero"><div class="container"><p class="eyebrow">Disclaimer</p><h1>免責事項</h1></div></header>
+	<div class="reading-container legal prose">
+		<p class="updated">制定日：2026年7月18日</p>
+		<h2>投資情報について</h2><p>当サイトの情報は、運営者個人の学習および経験の共有を目的としており、特定の金融商品の売買や投資行動を推奨するものではありません。</p>
+		<h2>情報の正確性</h2><p>掲載時点で確認できる情報に基づいて作成しますが、正確性、完全性、最新性を保証するものではありません。制度や税制、商品の条件は変更されることがあります。</p>
+		<h2>損害等の責任</h2><p>当サイトの情報を利用したことによって生じた損失や損害について、運営者は責任を負いかねます。投資には元本割れを含むリスクがあります。最終的な判断はご自身の責任で行ってください。</p>
+		<h2>著作権</h2><p>当サイトに掲載する文章や画像の無断転載を禁じます。引用する場合は、著作権法に基づく適切な範囲と方法で出典を明示してください。</p>
+		<h2>外部サイト</h2><p>リンク先の外部サイトで提供される情報やサービスについて、当サイトは責任を負いません。</p>
+	</div>
+</BaseLayout>

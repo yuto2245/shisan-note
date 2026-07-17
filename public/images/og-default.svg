@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#f7f6f1"/><circle cx="1020" cy="90" r="260" fill="#dcece4"/>
+  <path d="M750 470V355m110 115V280m110 190V190" stroke="#176b50" stroke-width="22" stroke-linecap="round"/>
+  <text x="110" y="270" font-size="84" font-family="serif" font-weight="700" fill="#14241f">資産ノート</text>
+  <text x="115" y="340" font-size="30" font-family="sans-serif" fill="#64716c">今日の暮らしと、未来のお金を整える。</text>
+</svg>

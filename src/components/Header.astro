@@ -1,0 +1,33 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const currentPath = Astro.url.pathname;
+const links = [
+	{ href: '/articles/', label: '記事を読む' },
+	{ href: '/categories/', label: 'カテゴリー' },
+	{ href: '/about/', label: 'このブログについて' },
+];
+---
+
+<header class="site-header">
+	<div class="container header-inner">
+		<a class="brand" href="/" aria-label="資産ノート トップページ">
+			<span class="brand-mark" aria-hidden="true">資</span>
+			<span>資産ノート</span>
+		</a>
+		<nav class="desktop-nav" aria-label="メインナビゲーション">
+			{links.map((link) => (
+				<a href={link.href} aria-current={currentPath.startsWith(link.href) ? 'page' : undefined}>{link.label}</a>
+			))}
+		</nav>
+		<div class="header-actions">
+			<ThemeToggle />
+			<details class="mobile-nav">
+				<summary aria-label="メニューを開く"><span aria-hidden="true">メニュー</span></summary>
+				<nav aria-label="モバイルナビゲーション">
+					{links.map((link) => <a href={link.href}>{link.label}</a>)}
+				</nav>
+			</details>
+		</div>
+	</div>
+</header>

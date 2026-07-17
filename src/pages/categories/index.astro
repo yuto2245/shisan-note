@@ -1,0 +1,23 @@
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedArticles } from '../../lib/articles';
+import { CATEGORIES } from '../../site.config';
+
+const articles = await getPublishedArticles();
+---
+
+<BaseLayout title="カテゴリー" description="資産ノートの記事カテゴリー一覧です。">
+	<div class="container"><Breadcrumbs items={[{ label: 'カテゴリー' }]} /></div>
+	<header class="page-hero">
+		<div class="container"><p class="eyebrow">Categories</p><h1>テーマから探す</h1><p>今の関心に近いテーマから読み始められます。</p></div>
+	</header>
+	<section class="section">
+		<div class="container category-grid">
+			{CATEGORIES.map((category) => {
+				const count = articles.filter((article) => article.data.category === category.label).length;
+				return <a class="category-card" href={`/categories/${category.slug}/`}><strong>{category.label}</strong><span>{category.description}</span><span class="category-count">{count}件の記事</span></a>;
+			})}
+		</div>
+	</section>
+</BaseLayout>

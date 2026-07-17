@@ -1,0 +1,9 @@
+---
+import { getCategorySlug } from '../lib/articles';
+import type { CategoryLabel } from '../site.config';
+
+interface Props { category: CategoryLabel }
+const { category } = Astro.props;
+---
+
+<a class="category-badge" href={`/categories/${getCategorySlug(category)}/`}>{category}</a>

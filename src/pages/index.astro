@@ -1,17 +1,72 @@
 ---
+import ArticleCard from '../components/ArticleCard.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getPublishedArticles } from '../lib/articles';
+import { CATEGORIES, SITE } from '../site.config';
 
+const articles = await getPublishedArticles();
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout>
+	<section class="hero">
+		<div class="container hero-grid">
+			<div class="hero-copy">
+				<p class="eyebrow">Money, life & learning</p>
+				<h1>今日の暮らしと、<br />未来のお金を整える。</h1>
+				<p class="lead">資産形成を難しい言葉のままにしない。家計、新NISA、投資信託を自分のペースで学ぶための小さなノートです。</p>
+				<div class="hero-actions">
+					<a class="button" href="/articles/">記事を読む</a>
+					<a class="button secondary" href="/about/">このブログについて</a>
+				</div>
+			</div>
+			<div class="hero-visual" aria-label="少しずつ積み上がる資産を表したイラスト">
+				<div class="hero-circle"></div>
+				<div class="hero-line"></div>
+				<div class="hero-note"><strong>急がず、続ける。</strong><span>生活の安心を土台に、理解できる範囲から始めます。</span></div>
+				<div class="hero-stat"><span>大切にすること</span><strong>長期・分散・継続</strong></div>
+			</div>
+		</div>
+	</section>
+
+	<div class="trust-strip">
+		<ul class="container trust-list">
+			<li><span class="trust-number">01</span><strong>わかりやすく</strong><span>専門用語をほどいて整理します</span></li>
+			<li><span class="trust-number">02</span><strong>中立な視点で</strong><span>特定の商品を推奨しません</span></li>
+			<li><span class="trust-number">03</span><strong>自分のペースで</strong><span>短期の値動きに振り回されません</span></li>
+		</ul>
+	</div>
+
+	<section class="section">
+		<div class="container">
+			<div class="section-header">
+				<div><p class="eyebrow">Latest articles</p><h2 class="section-heading">新着記事</h2></div>
+				<a class="text-link" href="/articles/">すべての記事 <span aria-hidden="true">→</span></a>
+			</div>
+			<div class="article-grid">
+				{articles.slice(0, 3).map((article, index) => <ArticleCard article={article} featured={index === 0 && article.data.featured} />)}
+			</div>
+		</div>
+	</section>
+
+	<section class="section-sm">
+		<div class="container">
+			<p class="eyebrow">Topics</p>
+			<h2 class="section-heading">テーマから探す</h2>
+			<p class="section-intro">気になるテーマから、必要なところだけ。学びたい順番に決まりはありません。</p>
+			<div class="category-grid" style="margin-top: 2rem">
+				{CATEGORIES.map((category) => (
+					<a class="category-card" href={`/categories/${category.slug}/`}>
+						<strong>{category.label}</strong><span>{category.description}</span>
+					</a>
+				))}
+			</div>
+		</div>
+	</section>
+
+	<section class="section">
+		<div class="reading-container callout">
+			<strong>このサイトについて</strong>
+			<div><p>{SITE.description} 掲載内容は個人の学習・経験の共有であり、金融商品の売買を推奨するものではありません。</p></div>
+		</div>
+	</section>
+</BaseLayout>

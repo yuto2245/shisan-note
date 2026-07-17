@@ -1,0 +1,24 @@
+<button class="theme-toggle" type="button" aria-label="表示テーマを切り替える" data-theme-toggle>
+	<span aria-hidden="true" data-theme-icon>◐</span>
+</button>
+
+<script>
+	const button = document.querySelector<HTMLButtonElement>('[data-theme-toggle]');
+	const icon = document.querySelector<HTMLElement>('[data-theme-icon]');
+
+	function updateLabel(theme: 'light' | 'dark') {
+		if (!button || !icon) return;
+		button.setAttribute('aria-label', theme === 'dark' ? 'ライトモードに切り替える' : 'ダークモードに切り替える');
+		icon.textContent = theme === 'dark' ? '☀' : '☾';
+	}
+
+	const current = document.documentElement.dataset.theme === 'dark' ? 'dark' : 'light';
+	updateLabel(current);
+
+	button?.addEventListener('click', () => {
+		const next = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+		document.documentElement.dataset.theme = next;
+		localStorage.setItem('theme', next);
+		updateLabel(next);
+	});
+</script>

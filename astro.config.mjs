@@ -1,5 +1,11 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
-export default defineConfig({});
+const site = process.env.SITE_URL ?? process.env.CF_PAGES_URL ?? 'http://localhost:4321';
+
+export default defineConfig({
+	site,
+	output: 'static',
+	integrations: [sitemap()],
+});

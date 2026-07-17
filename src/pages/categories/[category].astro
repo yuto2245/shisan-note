@@ -1,0 +1,29 @@
+---
+import ArticleCard from '../../components/ArticleCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedArticles } from '../../lib/articles';
+import { CATEGORIES } from '../../site.config';
+
+export async function getStaticPaths() {
+	const articles = await getPublishedArticles();
+	return CATEGORIES.map((category) => ({
+		params: { category: category.slug },
+		props: { category, articles: articles.filter((article) => article.data.category === category.label) },
+	}));
+}
+
+const { category, articles } = Astro.props;
+---
+
+<BaseLayout title={category.label} description={`${category.label}に関する記事一覧。${category.description}ための学習記録です。`}>
+	<div class="container"><Breadcrumbs items={[{ label: 'カテゴリー', href: '/categories/' }, { label: category.label }]} /></div>
+	<header class="page-hero">
+		<div class="container"><p class="eyebrow">Category</p><h1>{category.label}</h1><p>{category.description}。</p></div>
+	</header>
+	<section class="section">
+		<div class="container">
+			{articles.length > 0 ? <div class="article-grid">{articles.map((article) => <ArticleCard article={article} />)}</div> : <p class="empty-state">このカテゴリーの記事は準備中です。</p>}
+		</div>
+	</section>
+</BaseLayout>

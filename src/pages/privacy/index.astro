@@ -1,0 +1,17 @@
+---
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="プライバシーポリシー" description="資産ノートのプライバシーポリシーです。">
+	<div class="container"><Breadcrumbs items={[{ label: 'プライバシーポリシー' }]} /></div>
+	<header class="page-hero"><div class="container"><p class="eyebrow">Privacy</p><h1>プライバシーポリシー</h1></div></header>
+	<div class="reading-container legal prose">
+		<p class="updated">制定日：2026年7月18日</p>
+		<h2>個人情報の取り扱い</h2><p>当サイトの初期版には、お問い合わせフォーム、会員登録、コメント機能はありません。個人情報を入力・送信する機能は提供していません。</p>
+		<h2>アクセス解析</h2><p>現時点ではアクセス解析ツールを使用していません。今後導入する場合は、利用するサービス、取得する情報、拒否方法をこのページに追記します。</p>
+		<h2>Cookie</h2><p>当サイトは表示テーマの設定をブラウザのローカルストレージに保存します。この情報は端末内だけで使用し、外部へ送信しません。</p>
+		<h2>外部リンク</h2><p>当サイトから移動した外部サイトでの情報の取り扱いについては、各サイトのプライバシーポリシーをご確認ください。</p>
+		<h2>改定</h2><p>機能や法令の変更に応じて、本ポリシーを改定することがあります。重要な変更はこのページでお知らせします。</p>
+	</div>
+</BaseLayout>

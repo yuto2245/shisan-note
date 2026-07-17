@@ -1,0 +1,20 @@
+---
+import ArticleCard from '../../components/ArticleCard.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getPublishedArticles } from '../../lib/articles';
+
+const articles = await getPublishedArticles();
+---
+
+<BaseLayout title="記事一覧" description="資産形成、家計管理、新NISA、投資信託についての学習記事一覧です。">
+	<div class="container"><Breadcrumbs items={[{ label: '記事一覧' }]} /></div>
+	<header class="page-hero">
+		<div class="container"><p class="eyebrow">Articles</p><h1>記事を読む</h1><p>暮らしとお金の基本を、一つずつ整理するための記事です。</p></div>
+	</header>
+	<section class="section">
+		<div class="container">
+			<div class="article-grid">{articles.map((article) => <ArticleCard article={article} />)}</div>
+		</div>
+	</section>
+</BaseLayout>
