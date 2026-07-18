@@ -2,16 +2,14 @@
 interface Heading { depth: number; slug: string; text: string }
 interface Props { headings: Heading[] }
 const { headings } = Astro.props;
-const visibleHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+const visibleHeadings = headings.filter((heading) => heading.depth === 2);
 ---
 
 {visibleHeadings.length > 0 && (
 	<nav class="toc" aria-labelledby="toc-title">
 		<p id="toc-title" class="toc-title">この記事の目次</p>
 		<ol>
-			{visibleHeadings.map((heading) => (
-				<li class:list={{ nested: heading.depth === 3 }}><a href={`#${heading.slug}`}>{heading.text}</a></li>
-			))}
+			{visibleHeadings.map((heading) => <li><a href={`#${heading.slug}`}>{heading.text}</a></li>)}
 		</ol>
 	</nav>
 )}

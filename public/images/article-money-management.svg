@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
+  <rect width="960" height="560" fill="#f3f3f0"/>
+  <path d="M0 112h960M0 224h960M0 336h960M0 448h960M160 0v560M320 0v560M480 0v560M640 0v560M800 0v560" stroke="#deded9" stroke-width="1"/>
+  <rect x="74" y="62" width="812" height="436" rx="18" fill="#fff" stroke="#0b0b0b" stroke-width="5"/>
+  <rect x="74" y="62" width="812" height="76" rx="14" fill="#0b0b0b"/>
+  <path d="M74 124h812" stroke="#0b0b0b" stroke-width="28"/>
+  <text x="114" y="111" fill="#fff" font-family="Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4">MONEY MAP / 01</text>
+  <rect x="116" y="188" width="174" height="68" fill="#f3f3f0" stroke="#0b0b0b" stroke-width="4"/>
+  <rect x="116" y="310" width="174" height="68" fill="#f3f3f0" stroke="#0b0b0b" stroke-width="4"/>
+  <rect x="670" y="188" width="174" height="68" fill="#dfff32" stroke="#0b0b0b" stroke-width="4"/>
+  <rect x="670" y="310" width="174" height="68" fill="#dfff32" stroke="#0b0b0b" stroke-width="4"/>
+  <path d="M290 222h128M290 344h128M542 222h128M542 344h128" stroke="#0b0b0b" stroke-width="7"/>
+  <path d="m397 203 21 19-21 19M397 325l21 19-21 19M521 203l21 19-21 19M521 325l21 19-21 19" fill="none" stroke="#0b0b0b" stroke-width="7"/>
+  <circle cx="480" cy="283" r="72" fill="#0b0b0b"/>
+  <path d="M480 238v90M435 283h90" stroke="#dfff32" stroke-width="14"/>
+  <text x="203" y="231" text-anchor="middle" fill="#0b0b0b" font-family="Arial, sans-serif" font-size="19" font-weight="700">収支を知る</text>
+  <text x="203" y="353" text-anchor="middle" fill="#0b0b0b" font-family="Arial, sans-serif" font-size="19" font-weight="700">仕組み化</text>
+  <text x="757" y="231" text-anchor="middle" fill="#0b0b0b" font-family="Arial, sans-serif" font-size="19" font-weight="700">貯める</text>
+  <text x="757" y="353" text-anchor="middle" fill="#0b0b0b" font-family="Arial, sans-serif" font-size="19" font-weight="700">育てる</text>
+  <path d="M116 433h728" stroke="#0b0b0b" stroke-width="4"/>
+  <text x="116" y="468" fill="#0b0b0b" font-family="Arial, sans-serif" font-size="15" font-weight="700" letter-spacing="2">KNOW → PLAN → SAVE → INVEST</text>
+</svg>
