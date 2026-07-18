@@ -4,7 +4,7 @@
 	"description": "暮らしを整えながら、長期の資産形成を学ぶための個人ブログです。",
 	"start_url": "/",
 	"display": "standalone",
-	"background_color": "#f7f6f1",
-	"theme_color": "#176b50",
+	"background_color": "#ffffff",
+	"theme_color": "#dfff32",
 	"icons": [{ "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }]
 }

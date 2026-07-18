@@ -11,36 +11,38 @@ const articles = await getPublishedArticles();
 	<section class="hero">
 		<div class="container hero-grid">
 			<div class="hero-copy">
-				<p class="eyebrow">Money, life & learning</p>
-				<h1>今日の暮らしと、<br />未来のお金を整える。</h1>
-				<p class="lead">資産形成を難しい言葉のままにしない。家計、新NISA、投資信託を自分のペースで学ぶための小さなノートです。</p>
+				<p class="eyebrow"><span></span> Money, life & learning</p>
+				<h1>暮らしを整え、<br /><em>未来をつくる。</em></h1>
+				<p class="lead">お金を、むずかしい言葉のままにしない。家計、新NISA、投資信託を、自分のペースで学ぶための小さなノートです。</p>
 				<div class="hero-actions">
-					<a class="button" href="/articles/">記事を読む</a>
-					<a class="button secondary" href="/about/">このブログについて</a>
+					<a class="button" href="/articles/">記事を読む <span aria-hidden="true">↗</span></a>
+					<a class="button secondary" href="/about/">はじめての方へ</a>
 				</div>
+				<p class="hero-footnote">SCROLL TO EXPLORE <span aria-hidden="true">↓</span></p>
 			</div>
-			<div class="hero-visual" aria-label="少しずつ積み上がる資産を表したイラスト">
-				<div class="hero-circle"></div>
-				<div class="hero-line"></div>
-				<div class="hero-note"><strong>急がず、続ける。</strong><span>生活の安心を土台に、理解できる範囲から始めます。</span></div>
-				<div class="hero-stat"><span>大切にすること</span><strong>長期・分散・継続</strong></div>
+			<div class="hero-visual" aria-label="少しずつ積み上がる資産を表した図">
+				<div class="visual-grid"></div>
+				<div class="visual-label">01 / ASSET BUILDING</div>
+				<div class="hero-chart" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+				<div class="hero-note"><span>OUR PRINCIPLE</span><strong>急がず、<br />続ける。</strong></div>
+				<div class="hero-stat"><span>大切にすること</span><strong>長期 / 分散 / 継続</strong></div>
 			</div>
 		</div>
 	</section>
 
 	<div class="trust-strip">
 		<ul class="container trust-list">
-			<li><span class="trust-number">01</span><strong>わかりやすく</strong><span>専門用語をほどいて整理します</span></li>
-			<li><span class="trust-number">02</span><strong>中立な視点で</strong><span>特定の商品を推奨しません</span></li>
-			<li><span class="trust-number">03</span><strong>自分のペースで</strong><span>短期の値動きに振り回されません</span></li>
+			<li><span class="trust-number">01</span><div><strong>わかりやすく</strong><span>専門用語を、暮らしの言葉へ。</span></div></li>
+			<li><span class="trust-number">02</span><div><strong>中立な視点で</strong><span>特定の商品を推奨しません。</span></div></li>
+			<li><span class="trust-number">03</span><div><strong>自分のペースで</strong><span>短期の値動きに振り回されない。</span></div></li>
 		</ul>
 	</div>
 
-	<section class="section">
+	<section class="section latest-section">
 		<div class="container">
 			<div class="section-header">
-				<div><p class="eyebrow">Latest articles</p><h2 class="section-heading">新着記事</h2></div>
-				<a class="text-link" href="/articles/">すべての記事 <span aria-hidden="true">→</span></a>
+				<div><p class="eyebrow"><span></span> Journal / 01</p><h2 class="section-heading">新着記事</h2></div>
+				<a class="text-link" href="/articles/">すべての記事 <span aria-hidden="true">↗</span></a>
 			</div>
 			<div class="article-grid">
 				{articles.slice(0, 3).map((article, index) => <ArticleCard article={article} featured={index === 0 && article.data.featured} />)}
@@ -48,25 +50,32 @@ const articles = await getPublishedArticles();
 		</div>
 	</section>
 
-	<section class="section-sm">
-		<div class="container">
-			<p class="eyebrow">Topics</p>
-			<h2 class="section-heading">テーマから探す</h2>
-			<p class="section-intro">気になるテーマから、必要なところだけ。学びたい順番に決まりはありません。</p>
-			<div class="category-grid" style="margin-top: 2rem">
-				{CATEGORIES.map((category) => (
+	<section class="section topics-section">
+		<div class="container topics-layout">
+			<div class="topics-heading">
+				<p class="eyebrow"><span></span> Topics / 02</p>
+				<h2 class="section-heading">いま知りたい<br />テーマから。</h2>
+				<p class="section-intro">必要なところから、必要なだけ。学びたい順番に決まりはありません。</p>
+			</div>
+			<div class="category-grid">
+				{CATEGORIES.map((category, index) => (
 					<a class="category-card" href={`/categories/${category.slug}/`}>
-						<strong>{category.label}</strong><span>{category.description}</span>
+						<span class="category-index">0{index + 1}</span>
+						<strong>{category.label}</strong><span>{category.description}</span><b aria-hidden="true">↗</b>
 					</a>
 				))}
 			</div>
 		</div>
 	</section>
 
-	<section class="section">
-		<div class="reading-container callout">
-			<strong>このサイトについて</strong>
-			<div><p>{SITE.description} 掲載内容は個人の学習・経験の共有であり、金融商品の売買を推奨するものではありません。</p></div>
+	<section class="section manifesto-section">
+		<div class="container home-manifesto">
+			<p class="eyebrow"><span></span> About / 03</p>
+			<h2>お金の不安を、<br /><mark>学ぶ力</mark>に変える。</h2>
+			<div class="manifesto-copy">
+				<p>{SITE.description} 掲載内容は個人の学習・経験の共有であり、金融商品の売買を推奨するものではありません。</p>
+				<a class="button light" href="/about/">資産ノートについて <span aria-hidden="true">↗</span></a>
+			</div>
 		</div>
 	</section>
 </BaseLayout>

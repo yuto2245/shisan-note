@@ -1,5 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="960" height="560" viewBox="0 0 960 560">
-  <rect width="960" height="560" fill="#f3efe7"/><circle cx="480" cy="280" r="190" fill="#fff" stroke="#dccfb9" stroke-width="4"/>
-  <path d="M480 140v280M340 280h280" stroke="#176b50" stroke-width="24" stroke-linecap="round"/>
-  <path d="M378 205c34-42 65-63 102-63 40 0 78 23 110 67M374 354c36 43 70 64 106 64 39 0 75-22 108-65" fill="none" stroke="#b87333" stroke-width="9" stroke-linecap="round"/>
+  <rect width="960" height="560" fill="#fff"/>
+  <rect x="80" y="72" width="800" height="416" rx="18" fill="#f1f1ee" stroke="#0b0b0b" stroke-width="4"/>
+  <circle cx="480" cy="280" r="154" fill="#dfff32" stroke="#0b0b0b" stroke-width="6"/>
+  <circle cx="480" cy="280" r="106" fill="#fff" stroke="#0b0b0b" stroke-width="4"/>
+  <path d="M480 204v152M404 280h152" stroke="#0b0b0b" stroke-width="24"/>
+  <path d="M134 132h134M134 160h78M692 400h134M748 428h78" stroke="#0b0b0b" stroke-width="8"/>
+  <text x="134" y="438" fill="#0b0b0b" font-family="Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">NISA / 01</text>
 </svg>
