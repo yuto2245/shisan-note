@@ -69,5 +69,5 @@ const articleJsonLd = {
 			</nav>
 		</article>
 	</div>
-	{relatedArticles.length > 0 && <section class="section"><div class="container"><p class="eyebrow">Related</p><h2 class="section-heading">関連記事</h2><div class="article-grid" style="margin-top: 2rem">{relatedArticles.map((item) => <ArticleCard article={item} />)}</div></div></section>}
+	{relatedArticles.length > 0 && <section class="section related-section"><div class="container"><p class="eyebrow">Related</p><h2 class="section-heading">関連記事</h2><div class="article-grid" style="margin-top: 2rem">{relatedArticles.map((item) => <ArticleCard article={item} />)}</div></div></section>}
 </BaseLayout>
